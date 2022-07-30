@@ -4,13 +4,13 @@ import { capitalizeFirstLetter } from '../../utils/helpers';
 // import photo from "../../assets/small/commercial/0.jpg";
 
 
-function Gallery({ currentCategory }) {
-    const { name, description } = currentCategory;
+function Gallery(props) {
+    const { currentCategory } = props;
 
     return (
         <section>
-            <h1>{capitalizeFirstLetter(name)}</h1>
-            <p>{description}</p>
+            <h1 data-testid="h1tag">{capitalizeFirstLetter(currentCategory.name)}</h1>
+            <p>{currentCategory.description}</p>
             <PhotoList category={currentCategory.name} />
         </section>
     );
